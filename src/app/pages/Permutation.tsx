@@ -1,6 +1,7 @@
 import { Calculator, Youtube } from 'lucide-react';
 import { ConceptCard } from '../components/ConceptCard';
 import { FormulaBox } from '../components/FormulaBox';
+import { CircularPermutationViz } from '../components/CircularPermutationViz';
 
 export function Permutation() {
   const concepts = [
@@ -75,6 +76,15 @@ export function Permutation() {
         {concepts.map((concept, index) => (
           <ConceptCard key={index} {...concept} />
         ))}
+      </div>
+
+      {/* Circular Permutation Visualization */}
+      <div className="mt-12 bg-white rounded-xl shadow-lg p-8">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">원순열 시각화</h2>
+        <p className="text-gray-600 mb-6">
+          사람을 선택하고 회전 대칭을 확인해보세요. 회전하면 같은 배열은 하나로 묶입니다.
+        </p>
+        <CircularPermutationViz />
       </div>
 
       {/* Interactive Calculator Section */}
