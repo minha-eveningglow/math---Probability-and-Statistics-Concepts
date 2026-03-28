@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp } from 'lucide-react';
+import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp, Sigma, Percent } from 'lucide-react';
 
 export function Home() {
   const topics = [
@@ -20,12 +20,28 @@ export function Home() {
       items: ['중복조합', '칸막이 모델'],
     },
     {
+      title: '이항정리',
+      description: '세기(Counting)가 대수(Algebra)가 되는 순간',
+      path: '/binomial',
+      icon: Sigma,
+      color: 'bg-purple-500',
+      items: ['이항정리 공식', '계수와 조합의 관계', '다항식 전개'],
+    },
+    {
       title: '파스칼의 삼각형',
       description: '대수에서 확률로 이어지는 연결고리',
       path: '/pascal',
       icon: Triangle,
-      color: 'bg-purple-500',
-      items: ['이항정리', '파스칼의 삼각형', '정규분포로의 확장'],
+      color: 'bg-pink-500',
+      items: ['파스칼의 삼각형', '이항계수의 시각화', '정규분포로의 확장'],
+    },
+    {
+      title: '확률 기초',
+      description: '표본공간, 사건, 그리고 확률의 기본 연산',
+      path: '/probability',
+      icon: Percent,
+      color: 'bg-orange-500',
+      items: ['표본공간과 사건', '사건의 연산', '배반과 독립'],
     },
   ];
 
@@ -43,7 +59,7 @@ export function Home() {
       </div>
 
       {/* Topic Cards */}
-      <div className="grid md:grid-cols-3 gap-8 mb-16">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
         {topics.map((topic) => {
           const Icon = topic.icon;
           return (
@@ -75,18 +91,28 @@ export function Home() {
       </div>
 
       {/* Connection Insight */}
-      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-8 text-white">
-        <div className="flex items-start">
-          <TrendingUp className="w-8 h-8 mr-4 flex-shrink-0 mt-1" />
-          <div>
-            <h3 className="text-2xl font-bold mb-3">수학적 연결고리</h3>
-            <p className="text-lg mb-4">
-              이항정리 → 파스칼의 삼각형 → 정규분포
-            </p>
-            <p className="text-indigo-100">
-              각 단원들이 왜 이 순서로 배치되었는지 이해하면 공부가 더 쉬워집니다.
-              대수학의 조합 계수가 확률의 세계로 자연스럽게 이어지는 과정을 시각화하여 확인해보세요.
-            </p>
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-8 text-white mb-8">
+        <div className="flex items-start justify-between">
+          <div className="flex items-start flex-1">
+            <TrendingUp className="w-8 h-8 mr-4 flex-shrink-0 mt-1" />
+            <div>
+              <h3 className="text-2xl font-bold mb-3">수학적 연결고리</h3>
+              <p className="text-lg mb-4">
+                조합론 → 이항정리 → 파스칼의 삼각형 → 이항분포 → 정규분포
+              </p>
+              <p className="text-indigo-100 mb-4">
+                각 단원들이 왜 이 순서로 배치되었는지 이해하면 공부가 더 쉬워집니다.
+                대수학의 조합 계수가 확률의 세계로 자연스럽게 이어지는 과정을 시각화하여 확인해보세요.
+              </p>
+              <Link
+                to="/flow"
+                className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 rounded-lg font-bold hover:bg-indigo-50 transition-all transform hover:scale-105"
+              >
+                <TrendingUp className="w-5 h-5 mr-2" />
+                인터랙티브 여정 시작하기
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

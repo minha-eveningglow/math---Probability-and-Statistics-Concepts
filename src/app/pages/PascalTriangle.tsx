@@ -1,9 +1,12 @@
 import { useState } from 'react';
-import { Triangle, TrendingUp, Sparkles } from 'lucide-react';
+import { Triangle, TrendingUp, Sparkles, Lightbulb, Calculator } from 'lucide-react';
 import { PascalTriangleViz } from '../components/PascalTriangleViz';
 import { BinomialDistribution } from '../components/BinomialDistribution';
 import { BinomialExpansion } from '../components/BinomialExpansion';
 import { FormulaBox } from '../components/FormulaBox';
+import { PascalProperties } from '../components/PascalProperties';
+import { RowSumVisualization } from '../components/RowSumVisualization';
+import { HockeyStick } from '../components/HockeyStick';
 
 export function PascalTriangle() {
   const [rows, setRows] = useState(10);
@@ -17,6 +20,15 @@ export function PascalTriangle() {
         <p className="text-lg text-gray-600">
           이항정리, 조합, 확률이 만나는 지점. 수학의 아름다운 연결고리를 탐험합니다.
         </p>
+      </div>
+
+      {/* Core Properties */}
+      <div className="mb-8">
+        <div className="flex items-center mb-4">
+          <Lightbulb className="w-6 h-6 text-yellow-600 mr-2" />
+          <h2 className="text-2xl font-bold text-gray-900">핵심 성질</h2>
+        </div>
+        <PascalProperties />
       </div>
 
       {/* Pascal Triangle Interactive */}
@@ -40,6 +52,22 @@ export function PascalTriangle() {
           </div>
         </div>
         <PascalTriangleViz rows={rows} />
+      </div>
+
+      {/* Important Results Section */}
+      <div className="mb-8">
+        <div className="flex items-center mb-4">
+          <Calculator className="w-6 h-6 text-indigo-600 mr-2" />
+          <h2 className="text-2xl font-bold text-gray-900">중요한 결과</h2>
+        </div>
+        
+        <div className="space-y-6">
+          {/* Row Sum */}
+          <RowSumVisualization />
+          
+          {/* Hockey Stick */}
+          <HockeyStick />
+        </div>
       </div>
 
       {/* Binomial Theorem Expansion */}

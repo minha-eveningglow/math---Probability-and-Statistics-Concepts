@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router';
-import { BookOpen, Shuffle, Grid3x3, Triangle } from 'lucide-react';
+import { BookOpen, Shuffle, Grid3x3, Triangle, Sigma, Percent, TrendingUp } from 'lucide-react';
 
 export function Root() {
   const location = useLocation();
@@ -8,7 +8,10 @@ export function Root() {
     { path: '/', label: '홈', icon: BookOpen },
     { path: '/permutation', label: '순열', icon: Shuffle },
     { path: '/combination', label: '조합', icon: Grid3x3 },
-    { path: '/pascal', label: '파스칼의 삼각형', icon: Triangle },
+    { path: '/binomial', label: '이항정리', icon: Sigma },
+    { path: '/pascal', label: '파스칼', icon: Triangle },
+    { path: '/probability', label: '확률기초', icon: Percent },
+    { path: '/flow', label: '개념의흐름', icon: TrendingUp },
   ];
 
   return (
