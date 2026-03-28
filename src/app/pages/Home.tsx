@@ -109,7 +109,7 @@ export function Home() {
                 className="inline-flex items-center px-6 py-3 bg-white text-indigo-600 rounded-lg font-bold hover:bg-indigo-50 transition-all transform hover:scale-105"
               >
                 <TrendingUp className="w-5 h-5 mr-2" />
-                인터랙티브 여정 시작하기
+                개념의 흐름 살펴보기
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </div>

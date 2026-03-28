@@ -13,6 +13,86 @@ export function ProbabilityBasics() {
         <p className="text-xl text-gray-600">
           표본공간, 사건, 그리고 확률의 기본 연산을 이해합니다
         </p>
+        <div className="mt-4">
+          <a
+            href="https://www.youtube.com/watch?v=M7r4HOspQdk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-4 py-2 bg-orange-600 text-white rounded-lg font-semibold hover:bg-orange-700 transition-colors"
+          >
+            📺 확률 기초 강의 영상 보기
+          </a>
+        </div>
+      </div>
+
+      {/* Trial Concept */}
+      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl shadow-lg p-8 mb-8 text-white">
+        <h2 className="text-2xl font-bold mb-4">🎯 시행 (Trial)</h2>
+        <div className="space-y-4">
+          <div className="bg-white/10 rounded-lg p-6">
+            <p className="text-lg font-semibold mb-3">
+              시행이란? 같은 조건에서 반복할 수 있고, 그 결과가 우연에 의해 결정되는 실험이나 관찰
+            </p>
+            <div className="grid md:grid-cols-3 gap-4 mt-4">
+              <div className="bg-white/20 rounded-lg p-4">
+                <div className="text-2xl mb-2">🔄</div>
+                <h3 className="font-bold mb-2">반복 가능성</h3>
+                <p className="text-sm text-indigo-100">
+                  같은 조건에서 여러 번 반복할 수 있음
+                </p>
+              </div>
+              <div className="bg-white/20 rounded-lg p-4">
+                <div className="text-2xl mb-2">❓</div>
+                <h3 className="font-bold mb-2">결과의 불확실성</h3>
+                <p className="text-sm text-indigo-100">
+                  미리 결과를 정확히 예측할 수 없음
+                </p>
+              </div>
+              <div className="bg-white/20 rounded-lg p-4">
+                <div className="text-2xl mb-2">📋</div>
+                <h3 className="font-bold mb-2">결과 집합 가능</h3>
+                <p className="text-sm text-indigo-100">
+                  가능한 모든 결과를 미리 알 수 있음
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg p-6 text-gray-800">
+            <h3 className="font-bold text-lg text-indigo-700 mb-3">시행의 예시</h3>
+            <div className="space-y-3">
+              <div className="flex items-start">
+                <span className="text-2xl mr-3">🎲</span>
+                <div>
+                  <p className="font-semibold">주사위 던지기</p>
+                  <p className="text-sm text-gray-600">1부터 6까지의 눈이 나올 수 있으며, 어떤 눈이 나올지 미리 알 수 없음</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-2xl mr-3">🪙</span>
+                <div>
+                  <p className="font-semibold">동전 던지기</p>
+                  <p className="text-sm text-gray-600">앞면 또는 뒷면이 나올 수 있으며, 결과는 우연에 의해 결정됨</p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <span className="text-2xl mr-3">🃏</span>
+                <div>
+                  <p className="font-semibold">카드 뽑기</p>
+                  <p className="text-sm text-gray-600">52장의 카드 중 어떤 카드가 뽑힐지 미리 알 수 없음</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/10 rounded-lg p-4 border-2 border-white/30">
+            <p className="font-bold mb-2">💡 핵심 포인트</p>
+            <p className="text-sm text-indigo-100">
+              시행의 모든 가능한 결과의 집합이 바로 <span className="font-bold text-yellow-300">표본공간(Sample Space)</span>이고,
+              표본공간의 부분집합이 <span className="font-bold text-yellow-300">사건(Event)</span>입니다.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Definitions */}

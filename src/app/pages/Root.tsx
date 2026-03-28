@@ -11,7 +11,7 @@ export function Root() {
     { path: '/binomial', label: '이항정리', icon: Sigma },
     { path: '/pascal', label: '파스칼', icon: Triangle },
     { path: '/probability', label: '확률기초', icon: Percent },
-    { path: '/flow', label: '개념의흐름', icon: TrendingUp },
+    { path: '/flow', label: '개념흐름', icon: TrendingUp },
   ];
 
   return (

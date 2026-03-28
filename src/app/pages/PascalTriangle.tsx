@@ -3,7 +3,6 @@ import { Triangle, TrendingUp, Sparkles, Lightbulb, Calculator } from 'lucide-re
 import { PascalTriangleViz } from '../components/PascalTriangleViz';
 import { BinomialDistribution } from '../components/BinomialDistribution';
 import { BinomialExpansion } from '../components/BinomialExpansion';
-import { FormulaBox } from '../components/FormulaBox';
 import { PascalProperties } from '../components/PascalProperties';
 import { RowSumVisualization } from '../components/RowSumVisualization';
 import { HockeyStick } from '../components/HockeyStick';
@@ -20,6 +19,16 @@ export function PascalTriangle() {
         <p className="text-lg text-gray-600">
           이항정리, 조합, 확률이 만나는 지점. 수학의 아름다운 연결고리를 탐험합니다.
         </p>
+        <div className="mt-4">
+          <a
+            href="https://www.youtube.com/watch?v=tISXnbNF6Qc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-4 py-2 bg-pink-600 text-white rounded-lg font-semibold hover:bg-pink-700 transition-colors"
+          >
+            📺 파스칼의 삼각형 강의 영상 보기
+          </a>
+        </div>
       </div>
 
       {/* Core Properties */}
@@ -83,7 +92,7 @@ export function PascalTriangle() {
       </div>
 
       {/* Connections Section */}
-      <div className="grid md:grid-cols-2 gap-6 mb-8">
+      <div className="mb-8">
         <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl shadow-lg p-6 border-2 border-purple-200">
           <div className="flex items-center mb-4">
             <Sparkles className="w-6 h-6 text-purple-600 mr-2" />
@@ -91,7 +100,7 @@ export function PascalTriangle() {
           </div>
           <div className="space-y-3">
             <p className="text-gray-700">
-              (a + b)ⁿ을 전개할 때 각 항의 계수는 파스칼의 삼각형 n번째 행과 일치합니다.
+              (a + b)<sup>n</sup>을 전개할 때 각 항의 계수는 파스칼의 삼각형 n번째 행과 일치합니다.
             </p>
             <div className="bg-white rounded-lg p-4 font-mono text-sm">
               <div>(a + b)² = 1a² + 2ab + 1b²</div>
@@ -104,33 +113,12 @@ export function PascalTriangle() {
                 <span className="font-semibold">세기가 대수가 되는 순간:</span>
               </p>
               <p className="text-xs text-gray-700 mt-1">
-                aⁿ⁻ʳbʳ 항의 계수 = n개의 괄호 중에서 b를 r개 선택하는 방법의 수 = ₙCᵣ
+                a<sup>n-r</sup>b<sup>r</sup> 항의 계수 = n개의 괄호 중에서 b를 r개 선택하는 방법의 수 = <sub>n</sub>C<sub>r</sub>
               </p>
             </div>
             <p className="text-sm text-gray-600 italic">
-              각 계수는 ₙCᵣ로 표현됩니다. 대수 = 조합!
+              각 계수는 <sub>n</sub>C<sub>r</sub>로 표현됩니다. 대수 = 조합!
             </p>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl shadow-lg p-6 border-2 border-blue-200">
-          <div className="flex items-center mb-4">
-            <Sparkles className="w-6 h-6 text-blue-600 mr-2" />
-            <h3 className="text-xl font-bold text-gray-900">숨겨진 패턴들</h3>
-          </div>
-          <div className="space-y-3">
-            <FormulaBox
-              title="각 행의 합"
-              content="n번째 행의 모든 수를 더하면 2ⁿ"
-            />
-            <FormulaBox
-              title="대각선 합"
-              content="대각선을 따라 합하면 피보나치 수열 1, 1, 2, 3, 5, 8, 13..."
-            />
-            <FormulaBox
-              title="하키 스틱 패턴"
-              content="대각선의 연속된 수들의 합 = 바로 아래 대각선의 한 수"
-            />
           </div>
         </div>
       </div>
