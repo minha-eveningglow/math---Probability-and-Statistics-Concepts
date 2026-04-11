@@ -138,17 +138,73 @@ export function ConceptualFlow() {
           <ArrowDown className="w-8 h-8 text-gray-400" />
         </div>
 
-        {/* Section 4: 이항분포 */}
+        {/* Section 4: 확률 기초 */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-cyan-500 text-white rounded-full flex items-center justify-center font-bold text-xl">
+              4
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900">확률 기초 (Probability Basics)</h2>
+          </div>
+
+          <p className="text-lg text-gray-700 mb-4">
+            조합론이 <span className="font-bold text-cyan-600">확률</span>로 전환되는 시작점
+          </p>
+
+          <div className="bg-cyan-50 rounded-xl p-6">
+            <div className="grid md:grid-cols-3 gap-4 mb-4">
+              <div className="bg-white rounded-lg p-4 border-2 border-cyan-300">
+                <div className="font-bold text-cyan-700 mb-2">1️⃣ 확률 입문</div>
+                <div className="text-sm text-gray-700">
+                  • 시행, 표본공간, 사건<br/>
+                  • 확률의 정의<br/>
+                  • 수학적 vs 통계적 확률
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg p-4 border-2 border-cyan-300">
+                <div className="font-bold text-cyan-700 mb-2">2️⃣ 기본 성질</div>
+                <div className="text-sm text-gray-700">
+                  • 확률의 공리와 성질<br/>
+                  • 기하적 확률<br/>
+                  • 사건의 연산
+                </div>
+              </div>
+
+              <div className="bg-white rounded-lg p-4 border-2 border-cyan-300">
+                <div className="font-bold text-cyan-700 mb-2">3️⃣ 계산 법칙</div>
+                <div className="text-sm text-gray-700">
+                  • 덧셈정리<br/>
+                  • 배반사건, 여사건<br/>
+                  • 드모르간의 법칙
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg p-4">
+              <p className="font-bold text-cyan-800 mb-2">핵심 개념:</p>
+              <p className="text-gray-700">
+                P(A) = n(A) / n(S) — 경우의 수가 확률이 되는 순간
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center mb-8">
+          <ArrowDown className="w-8 h-8 text-gray-400" />
+        </div>
+
+        {/* Section 5: 이항분포 */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold text-xl">
-              4
+              5
             </div>
             <h2 className="text-3xl font-bold text-gray-900">이항분포 (Binomial Distribution)</h2>
           </div>
-          
+
           <p className="text-lg text-gray-700 mb-4">
-            조합론이 <span className="font-bold text-indigo-600">확률</span>로 전환되는 순간
+            조합론과 확률이 <span className="font-bold text-indigo-600">결합</span>되는 순간
           </p>
 
           <div className="bg-indigo-50 rounded-xl p-6">
@@ -177,11 +233,11 @@ export function ConceptualFlow() {
           <ArrowDown className="w-8 h-8 text-gray-400" />
         </div>
 
-        {/* Section 5: 정규분포 */}
+        {/* Section 6: 정규분포 */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-xl">
-              5
+              6
             </div>
             <h2 className="text-3xl font-bold text-gray-900">정규분포 (Normal Distribution)</h2>
           </div>
@@ -226,14 +282,20 @@ export function ConceptualFlow() {
         </div>
 
         {/* Summary */}
-        <div className="bg-gradient-to-r from-blue-500 to-emerald-500 rounded-2xl shadow-lg p-8 text-white mt-12">
+        <div className="bg-gradient-to-r from-blue-500 via-cyan-500 to-emerald-500 rounded-2xl shadow-lg p-8 text-white mt-12">
           <h2 className="text-3xl font-bold mb-4">연결고리 요약</h2>
           <div className="space-y-3 text-lg">
             <p>🔢 <span className="font-bold">조합론</span> → 경우의 수를 센다</p>
             <p>➕ <span className="font-bold">이항정리</span> → 세기가 대수 전개의 계수가 된다</p>
             <p>📐 <span className="font-bold">파스칼 삼각형</span> → 계수들의 기하학적 패턴</p>
+            <p>🎯 <span className="font-bold">확률 기초</span> → 경우의 수가 확률이 된다</p>
             <p>🎲 <span className="font-bold">이항분포</span> → 조합과 확률이 결합된다</p>
             <p>📈 <span className="font-bold">정규분포</span> → 이산이 연속이 되는 극한</p>
+          </div>
+          <div className="mt-6 pt-6 border-t border-white/30">
+            <p className="text-cyan-100 italic">
+              조합론에서 시작하여 확률의 세계로 들어가고, 마침내 통계의 핵심인 정규분포에 도달합니다.
+            </p>
           </div>
         </div>
       </div>

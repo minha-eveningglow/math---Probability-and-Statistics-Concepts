@@ -37,11 +37,11 @@ export function Home() {
     },
     {
       title: '확률 기초',
-      description: '표본공간, 사건, 그리고 확률의 기본 연산',
+      description: '실험, 표본공간, 사건에서 확률 계산까지',
       path: '/probability',
       icon: Percent,
       color: 'bg-orange-500',
-      items: ['표본공간과 사건', '사건의 연산', '배반과 독립'],
+      items: ['확률의 정의', '기하적 확률', '덧셈정리', '드모르간의 법칙'],
     },
   ];
 
