@@ -1,3 +1,5 @@
+import { Link } from 'react-router';
+import { ArrowRight } from 'lucide-react';
 import { VennDiagram } from '../components/VennDiagram';
 import { MutuallyExclusiveVsIndependent } from '../components/MutuallyExclusiveVsIndependent';
 import { ProbabilityCalculator } from '../components/ProbabilityCalculator';
@@ -667,9 +669,16 @@ export function ProbabilityBasics() {
         </div>
 
         <div className="mt-6 text-center">
-          <p className="text-indigo-100 italic text-sm">
+          <p className="text-indigo-100 italic text-sm mb-4">
             "확률론은 불확실한 세상을 이해하는 수학적 언어입니다"
           </p>
+          <Link
+            to="/conditional"
+            className="inline-flex items-center px-6 py-3 bg-white text-indigo-700 rounded-lg font-bold hover:bg-indigo-50 transition-all"
+          >
+            다음 단계: 조건부확률과 곱셈정리
+            <ArrowRight className="w-5 h-5 ml-2" />
+          </Link>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from 'react-router';
-import { BookOpen, Shuffle, Grid3x3, Triangle, Sigma, Percent, TrendingUp } from 'lucide-react';
+import { BookOpen, Shuffle, Grid3x3, Triangle, Sigma, Percent, Filter, Repeat, TrendingUp } from 'lucide-react';
 
 export function Root() {
   const location = useLocation();
@@ -11,6 +11,8 @@ export function Root() {
     { path: '/binomial', label: '이항정리', icon: Sigma },
     { path: '/pascal', label: '파스칼', icon: Triangle },
     { path: '/probability', label: '확률기초', icon: Percent },
+    { path: '/conditional', label: '조건부확률', icon: Filter },
+    { path: '/independence', label: '독립', icon: Repeat },
     { path: '/flow', label: '개념흐름', icon: TrendingUp },
   ];
 
@@ -31,7 +33,7 @@ export function Root() {
                   <Link
                     key={item.path}
                     to={item.path}
-                    className={`flex items-center px-4 py-2 rounded-lg transition-colors ${
+                    className={`flex items-center px-3 py-2 rounded-lg transition-colors text-sm ${
                       isActive
                         ? 'bg-indigo-600 text-white'
                         : 'text-gray-700 hover:bg-indigo-50'

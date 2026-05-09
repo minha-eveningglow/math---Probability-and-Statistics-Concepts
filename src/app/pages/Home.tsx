@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp, Sigma, Percent } from 'lucide-react';
+import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp, Sigma, Percent, Filter, Repeat } from 'lucide-react';
 
 export function Home() {
   const topics = [
@@ -43,6 +43,22 @@ export function Home() {
       color: 'bg-orange-500',
       items: ['확률의 정의', '기하적 확률', '덧셈정리', '드모르간의 법칙'],
     },
+    {
+      title: '조건부확률',
+      description: '조건부확률의 정의와 곱셈정리',
+      path: '/conditional',
+      icon: Filter,
+      color: 'bg-teal-500',
+      items: ['조건부확률', '곱셈정리', '확률의 4대 법칙'],
+    },
+    {
+      title: '독립과 독립시행',
+      description: '사건의 독립·종속 판별과 독립시행의 확률',
+      path: '/independence',
+      icon: Repeat,
+      color: 'bg-amber-500',
+      items: ['독립과 종속', '독립의 성질', '독립시행의 확률'],
+    },
   ];
 
   return (
@@ -59,7 +75,7 @@ export function Home() {
       </div>
 
       {/* Topic Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
         {topics.map((topic) => {
           const Icon = topic.icon;
           return (
