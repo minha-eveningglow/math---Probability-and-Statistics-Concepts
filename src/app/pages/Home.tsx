@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp, Sigma, Percent, Filter, Repeat } from 'lucide-react';
+import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp, Sigma, Percent, Filter, Repeat, BarChart2 } from 'lucide-react';
 
 export function Home() {
   const topics = [
@@ -58,6 +58,14 @@ export function Home() {
       icon: Repeat,
       color: 'bg-amber-500',
       items: ['독립과 종속', '독립의 성질', '독립시행의 확률'],
+    },
+    {
+      title: '이산확률변수',
+      description: '확률변수·PMF·기댓값·분산·이항분포·큰수의 법칙',
+      path: '/discrete-rv',
+      icon: BarChart2,
+      color: 'bg-violet-500',
+      items: ['확률변수와 확률분포', '확률질량함수(PMF)', '기댓값·분산·표준편차', 'aX+b 변환', '이항분포 B(n,p)', '큰수의 법칙'],
     },
   ];
 
