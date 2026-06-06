@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router';
 import {
   BookOpen, Shuffle, Grid3x3, Triangle, Sigma, Percent,
-  Filter, Repeat, TrendingUp, BarChart2, Menu, X,
+  Filter, Repeat, TrendingUp, BarChart2, Activity, Bell, GitMerge, Menu, X,
 } from 'lucide-react';
 
 const groups = [
@@ -27,6 +27,9 @@ const groups = [
     label: '확률변수',
     items: [
       { path: '/discrete-rv', label: '이산확률변수', icon: BarChart2 },
+      { path: '/continuous-rv', label: '연속확률변수 · PDF', icon: Activity },
+      { path: '/normal-distribution', label: '정규분포', icon: Bell },
+      { path: '/binomial-normal', label: '이항분포의 정규근사', icon: GitMerge },
     ],
   },
   {

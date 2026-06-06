@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp, Sigma, Percent, Filter, Repeat, BarChart2 } from 'lucide-react';
+import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp, Sigma, Percent, Filter, Repeat, BarChart2, Activity, Bell, GitMerge } from 'lucide-react';
 
 export function Home() {
   const topics = [
@@ -66,6 +66,30 @@ export function Home() {
       icon: BarChart2,
       color: 'bg-violet-500',
       items: ['확률변수와 확률분포', '확률질량함수(PMF)', '기댓값·분산·표준편차', 'aX+b 변환', '이항분포 B(n,p)', '큰수의 법칙'],
+    },
+    {
+      title: '연속확률변수 · PDF',
+      description: '"확률 = 넓이" — 구간의 적분으로 확률을 계산한다',
+      path: '/continuous-rv',
+      icon: Activity,
+      color: 'bg-teal-500',
+      items: ['연속확률변수 정의', '확률밀도함수(PDF) 조건', 'P(a≤X≤b) = ∫f(x)dx', '기댓값·분산 (적분)'],
+    },
+    {
+      title: '정규분포',
+      description: '종 모양 좌우대칭 분포 — 표준화로 확률표 활용',
+      path: '/normal-distribution',
+      icon: Bell,
+      color: 'bg-indigo-500',
+      items: ['정규분포 N(m, σ²)', '표준정규분포 N(0, 1)', '대칭성 성질', '표준화 Z = (X−m)/σ'],
+    },
+    {
+      title: '이항분포의 정규근사',
+      description: 'n이 크면 B(n, p) ≈ N(np, npq)로 근사',
+      path: '/binomial-normal',
+      icon: GitMerge,
+      color: 'bg-blue-600',
+      items: ['근사 조건: np≥5, nq≥5', '근사 공식 B(n,p)≈N(np,npq)', '표준화 후 확률 계산'],
     },
   ];
 

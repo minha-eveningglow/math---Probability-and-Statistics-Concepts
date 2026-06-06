@@ -9,6 +9,9 @@ import { ConditionalProbability } from "./pages/ConditionalProbability";
 import { Independence } from "./pages/Independence";
 import { ConceptualFlow } from "./pages/ConceptualFlow";
 import { DiscreteRV } from "./pages/DiscreteRV";
+import { ContinuousRV } from "./pages/ContinuousRV";
+import { NormalDistribution } from "./pages/NormalDistribution";
+import { BinomialNormalApprox } from "./pages/BinomialNormalApprox";
 import { Root } from "./pages/Root";
 
 export const router = createBrowserRouter([
@@ -25,6 +28,9 @@ export const router = createBrowserRouter([
       { path: "conditional", Component: ConditionalProbability },
       { path: "independence", Component: Independence },
       { path: "discrete-rv", Component: DiscreteRV },
+      { path: "continuous-rv", Component: ContinuousRV },
+      { path: "normal-distribution", Component: NormalDistribution },
+      { path: "binomial-normal", Component: BinomialNormalApprox },
       { path: "flow", Component: ConceptualFlow },
     ],
   },

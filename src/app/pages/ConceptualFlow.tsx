@@ -233,56 +233,114 @@ export function ConceptualFlow() {
           <ArrowDown className="w-8 h-8 text-gray-400" />
         </div>
 
-        {/* Section 6: 정규분포 */}
+        {/* Section 6: 연속확률변수 */}
         <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center font-bold text-xl">
+            <div className="w-12 h-12 bg-teal-500 text-white rounded-full flex items-center justify-center font-bold text-xl">
               6
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900">연속확률변수 · 확률밀도함수</h2>
+          </div>
+
+          <p className="text-lg text-gray-700 mb-4">
+            이산에서 <span className="font-bold text-teal-600">연속</span>으로 — 합(Σ)이 적분(∫)이 된다
+          </p>
+
+          <div className="bg-teal-50 rounded-xl p-6">
+            <div className="text-xl text-center mb-4 text-teal-800 font-mono">
+              P(a ≤ X ≤ b) = ∫ₐᵇ f(x) dx
+            </div>
+            <div className="border-t border-teal-200 pt-4 space-y-2">
+              <p className="text-gray-700">
+                <span className="font-bold">핵심 변화:</span> 이산확률변수의 P(X=k)는 0 이상의 값을 가지지만,
+                연속확률변수는 P(X=c) = 0 — 확률은 반드시 <strong>구간의 넓이</strong>로 계산
+              </p>
+              <p className="text-gray-700">
+                <span className="font-bold">확률밀도함수 조건:</span> f(x) ≥ 0, ∫f(x)dx = 1
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center mb-8">
+          <ArrowDown className="w-8 h-8 text-gray-400" />
+        </div>
+
+        {/* Section 7: 정규분포 */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center font-bold text-xl">
+              7
             </div>
             <h2 className="text-3xl font-bold text-gray-900">정규분포 (Normal Distribution)</h2>
           </div>
-          
+
           <p className="text-lg text-gray-700 mb-4">
-            이항분포의 <span className="font-bold text-emerald-600">극한</span> - 이산에서 연속으로
+            가장 중요한 연속확률분포 — <span className="font-bold text-indigo-600">표준화</span>를 통해 통일된 방법으로 계산
           </p>
 
-          <div className="bg-emerald-50 rounded-xl p-6">
-            <div className="text-xl text-center mb-4 text-emerald-800">
-              n → ∞ 일 때, 이항분포 → 정규분포
+          <div className="bg-indigo-50 rounded-xl p-6">
+            <div className="text-xl text-center mb-4 text-indigo-800 font-mono">
+              X ∼ N(m, σ²) &nbsp;→&nbsp; Z = (X − m) / σ ∼ N(0, 1)
             </div>
-
-            <div className="border-t border-emerald-200 pt-4 space-y-3">
+            <div className="border-t border-indigo-200 pt-4 space-y-2">
               <p className="text-gray-700">
-                <span className="font-bold">중심극한정리:</span> 충분히 많은 독립적인 시행을 반복하면, 그 합의 분포는 정규분포에 가까워집니다
+                <span className="font-bold">특징:</span> 평균 m 중심의 좌우대칭 종 모양 곡선
               </p>
               <p className="text-gray-700">
-                <span className="font-bold">평균 μ:</span> np
-              </p>
-              <p className="text-gray-700">
-                <span className="font-bold">표준편차 σ:</span> √(np(1-p))
+                <span className="font-bold">표준화:</span> 어떤 정규분포든 Z 변환으로 표준정규분포표 하나로 해결
               </p>
               <div className="bg-white rounded p-4 mt-4">
-                <svg viewBox="0 0 400 200" className="w-full h-40">
-                  {/* Bell curve */}
+                <svg viewBox="0 0 400 200" className="w-full h-36">
                   <path
                     d="M 20 180 Q 50 180 80 160 T 140 100 T 200 20 T 260 100 T 320 160 T 380 180"
-                    fill="none"
-                    stroke="#10b981"
-                    strokeWidth="3"
+                    fill="none" stroke="#6366f1" strokeWidth="3"
                   />
-                  {/* X axis */}
                   <line x1="20" y1="180" x2="380" y2="180" stroke="#9ca3af" strokeWidth="2" />
-                  {/* Mean line */}
-                  <line x1="200" y1="20" x2="200" y2="180" stroke="#059669" strokeWidth="2" strokeDasharray="5,5" />
-                  <text x="200" y="195" textAnchor="middle" fontSize="14" fill="#059669">μ</text>
+                  <line x1="200" y1="20" x2="200" y2="180" stroke="#4f46e5" strokeWidth="2" strokeDasharray="5,5" />
+                  <text x="200" y="195" textAnchor="middle" fontSize="13" fill="#4f46e5">m (=0)</text>
                 </svg>
               </div>
             </div>
           </div>
         </div>
 
+        <div className="flex justify-center mb-8">
+          <ArrowDown className="w-8 h-8 text-gray-400" />
+        </div>
+
+        {/* Section 8: 이항분포의 정규근사 */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+              8
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900">이항분포의 정규근사</h2>
+          </div>
+
+          <p className="text-lg text-gray-700 mb-4">
+            모든 것이 <span className="font-bold text-blue-600">연결</span>된다 — 이항분포가 정규분포로 수렴
+          </p>
+
+          <div className="bg-blue-50 rounded-xl p-6">
+            <div className="text-xl text-center mb-4 text-blue-800 font-mono">
+              B(n, p) ≈ N(np, npq) &nbsp; (np≥5, nq≥5)
+            </div>
+            <div className="border-t border-blue-200 pt-4 space-y-2">
+              <p className="text-gray-700">
+                <span className="font-bold">의미:</span> 조합론에서 출발한 이항분포 B(n,p)가,
+                n이 커질수록 연속확률분포인 정규분포로 수렴한다
+              </p>
+              <p className="text-gray-700">
+                <span className="font-bold">실용:</span> 직접 계산이 불가능한 큰 n의 이항분포 문제를
+                표준화 한 번으로 풀 수 있다
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Summary */}
-        <div className="bg-gradient-to-r from-blue-500 via-cyan-500 to-emerald-500 rounded-2xl shadow-lg p-8 text-white mt-12">
+        <div className="bg-gradient-to-r from-blue-500 via-indigo-500 to-teal-500 rounded-2xl shadow-lg p-8 text-white mt-12">
           <h2 className="text-3xl font-bold mb-4">연결고리 요약</h2>
           <div className="space-y-3 text-lg">
             <p>🔢 <span className="font-bold">조합론</span> → 경우의 수를 센다</p>
@@ -290,11 +348,13 @@ export function ConceptualFlow() {
             <p>📐 <span className="font-bold">파스칼 삼각형</span> → 계수들의 기하학적 패턴</p>
             <p>🎯 <span className="font-bold">확률 기초</span> → 경우의 수가 확률이 된다</p>
             <p>🎲 <span className="font-bold">이항분포</span> → 조합과 확률이 결합된다</p>
-            <p>📈 <span className="font-bold">정규분포</span> → 이산이 연속이 되는 극한</p>
+            <p>〰️ <span className="font-bold">연속확률변수</span> → 확률이 넓이(적분)가 된다</p>
+            <p>📈 <span className="font-bold">정규분포</span> → 표준화로 모든 연속분포를 통일</p>
+            <p>🔗 <span className="font-bold">정규근사</span> → 이산과 연속이 하나로 연결된다</p>
           </div>
           <div className="mt-6 pt-6 border-t border-white/30">
-            <p className="text-cyan-100 italic">
-              조합론에서 시작하여 확률의 세계로 들어가고, 마침내 통계의 핵심인 정규분포에 도달합니다.
+            <p className="text-blue-100 italic">
+              조합론의 세기에서 시작하여, 확률을 거쳐, 마침내 이산과 연속이 하나로 만나는 정규근사에 도달합니다.
             </p>
           </div>
         </div>

@@ -644,10 +644,10 @@ export function DiscreteRV() {
             ← 독립시행 복습
           </Link>
           <Link
-            to="/pascal"
+            to="/continuous-rv"
             className="inline-flex items-center px-4 py-2 bg-white text-violet-700 rounded-lg font-bold hover:bg-violet-50 transition-all text-sm"
           >
-            파스칼 & 이항분포 →
+            연속확률변수 →
             <ArrowRight className="w-4 h-4 ml-1" />
           </Link>
         </div>
