@@ -2,6 +2,8 @@ import { Link } from 'react-router';
 import { BarChart2, ArrowRight, BookOpen, Calculator, Target, Youtube } from 'lucide-react';
 import { SampleMeanDistribution } from '../components/SampleMeanDistribution';
 import { ConfidenceIntervalViz } from '../components/ConfidenceIntervalViz';
+import { ElectionConfidenceViz } from '../components/ElectionConfidenceViz';
+import { ConfidenceZDiagram } from '../components/ConfidenceZDiagram';
 
 export function SampleMean() {
   return (
@@ -276,13 +278,14 @@ export function SampleMean() {
         {/* 도출 과정 */}
         <div className="bg-white border border-gray-200 rounded-xl p-6 mb-6">
           <h3 className="text-lg font-bold text-gray-900 mb-3">신뢰구간은 어떻게 나오는가</h3>
-          <div className="bg-gray-50 rounded-lg p-4 font-mono text-sm space-y-2 overflow-x-auto">
+          <div className="bg-gray-50 rounded-lg p-4 font-mono text-sm space-y-2 overflow-x-auto mb-4">
             <p>X̄ ~ N(m, σ²/n) 이므로 Z = (X̄ − m) / (σ/√n) 은 표준정규분포 N(0, 1)을 따른다.</p>
             <p className="text-blue-700">표준정규분포표에서 P(0 ≤ Z ≤ 1.96) = 0.475 이므로</p>
             <p>P(−1.96 ≤ Z ≤ 1.96) = 2 × 0.475 = 0.95</p>
             <p className="pl-4">⟺ P(X̄ − 1.96·σ/√n ≤ m ≤ X̄ + 1.96·σ/√n) = 0.95</p>
             <p className="text-indigo-700 font-bold">실제로 관측한 표본평균 x̄를 대입하면 신뢰도 95%의 신뢰구간을 얻는다.</p>
           </div>
+          <ConfidenceZDiagram />
         </div>
 
         {/* 신뢰구간의 길이 */}
@@ -305,6 +308,20 @@ export function SampleMean() {
               — 정밀함과 확신함은 서로 trade-off 관계에 있다.
             </p>
           </div>
+        </div>
+
+        {/* 실생활 예제: 선거 개표방송 */}
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+          <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center">
+            <Target className="w-5 h-5 mr-2 text-rose-600" />
+            실생활 예제 — 선거 개표방송의 "당선 확실" 표시
+          </h3>
+          <p className="text-sm text-gray-600 mb-4">
+            선거 개표방송에서 출구조사 결과를 발표할 때 "지지율 43% (오차범위 ±3%p, 95% 신뢰수준)"라고
+            말하는 것을 본 적이 있을 것이다. 두 후보의 신뢰구간을 슬라이더로 직접 움직여보면서
+            언제 "당선 확실"이 뜨고 언제 "경합"으로 표시되는지 확인해보자.
+          </p>
+          <ElectionConfidenceViz />
         </div>
 
         {/* 인터랙티브 */}

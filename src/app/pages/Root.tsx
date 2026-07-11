@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Outlet, Link, useLocation } from 'react-router';
 import {
   BookOpen, Shuffle, Grid3x3, Triangle, Sigma, Percent,
-  Filter, Repeat, TrendingUp, BarChart2, Activity, Bell, GitMerge, Menu, X,
+  Filter, Repeat, TrendingUp, BarChart2, Activity, Bell, GitMerge, Menu, X, Target,
 } from 'lucide-react';
 
 const groups = [
@@ -30,6 +30,12 @@ const groups = [
       { path: '/continuous-rv', label: '연속확률변수 · PDF', icon: Activity },
       { path: '/normal-distribution', label: '정규분포', icon: Bell },
       { path: '/binomial-normal', label: '이항분포의 정규근사', icon: GitMerge },
+    ],
+  },
+  {
+    label: '통계적 추정',
+    items: [
+      { path: '/sample-mean', label: '모평균과 표본평균, 모평균의 추정', icon: Target },
     ],
   },
   {
