@@ -1,4 +1,5 @@
 import { ArrowDown } from 'lucide-react';
+import { Link } from 'react-router';
 
 export function ConceptualFlow() {
   return (
@@ -339,6 +340,56 @@ export function ConceptualFlow() {
           </div>
         </div>
 
+        <div className="flex justify-center mb-8">
+          <ArrowDown className="w-8 h-8 text-gray-400" />
+        </div>
+
+        {/* Section 9: 표본평균과 모평균의 추정 */}
+        <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-xl">
+              9
+            </div>
+            <h2 className="text-3xl font-bold text-gray-900">표본평균과 모평균의 추정</h2>
+          </div>
+
+          <p className="text-lg text-gray-700 mb-4">
+            "값 하나"의 분포에서 <span className="font-bold text-emerald-600">"평균"이라는 새로운 확률변수</span>의 분포로 — 그리고 이를 거꾸로 이용해 모평균을 추정한다
+          </p>
+
+          <div className="bg-emerald-50 rounded-xl p-6">
+            <div className="text-xl text-center mb-4 text-emerald-800 font-mono">
+              X̄ ∼ N(m, σ²/n) &nbsp;→&nbsp; x̄ − z·σ/√n ≤ m ≤ x̄ + z·σ/√n
+            </div>
+            <div className="border-t border-emerald-200 pt-4 space-y-2">
+              <p className="text-gray-700">
+                <span className="font-bold">관점의 전환:</span> 앞서 8번까지는 확률변수 X 하나의 분포를 다뤘다면,
+                이제는 표본을 여러 번 뽑아 얻는 <strong>표본평균 X̄도 확률변수</strong>라는 관점으로 올라선다
+              </p>
+              <p className="text-gray-700">
+                <span className="font-bold">중심극한정리:</span> 모집단이 정규분포가 아니어도(균등분포, 지수분포 등)
+                표본의 크기 n이 커지면 X̄는 근사적으로 정규분포 N(m, σ²/n)을 따른다 —
+                <strong>7번 정규분포와 8번 정규근사가 다시 한번 등장</strong>하는 지점
+              </p>
+              <p className="text-gray-700">
+                <span className="font-bold">추정으로 방향 전환:</span> "모수 m을 알 때 X̄의 확률을 구하던" 것에서,
+                거꾸로 "관측한 x̄로부터 모수 m의 범위를 추정하는" 신뢰구간으로 문제 방향이 뒤집힌다
+              </p>
+              <p className="text-gray-600 mt-4">
+                예: 선거 개표방송에서 출구조사 지지율을 "43% ± 3%p"처럼 오차범위와 함께 발표하는 것도 이 신뢰구간이다
+              </p>
+            </div>
+            <div className="mt-4">
+              <Link
+                to="/sample-mean"
+                className="inline-flex items-center px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-semibold hover:bg-emerald-700 transition-colors"
+              >
+                모평균과 표본평균, 모평균의 추정 페이지로 →
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Summary */}
         <div className="bg-gradient-to-r from-blue-500 via-indigo-500 to-teal-500 rounded-2xl shadow-lg p-8 text-white mt-12">
           <h2 className="text-3xl font-bold mb-4">연결고리 요약</h2>
@@ -351,10 +402,13 @@ export function ConceptualFlow() {
             <p>〰️ <span className="font-bold">연속확률변수</span> → 확률이 넓이(적분)가 된다</p>
             <p>📈 <span className="font-bold">정규분포</span> → 표준화로 모든 연속분포를 통일</p>
             <p>🔗 <span className="font-bold">정규근사</span> → 이산과 연속이 하나로 연결된다</p>
+            <p>📊 <span className="font-bold">표본평균의 분포</span> → 확률변수의 평균도 확률변수다</p>
+            <p>🔍 <span className="font-bold">모평균의 추정</span> → 확률을 거꾸로 이용해 모수를 추정한다</p>
           </div>
           <div className="mt-6 pt-6 border-t border-white/30">
             <p className="text-blue-100 italic">
-              조합론의 세기에서 시작하여, 확률을 거쳐, 마침내 이산과 연속이 하나로 만나는 정규근사에 도달합니다.
+              조합론의 세기에서 시작하여, 확률을 거쳐, 이산과 연속이 하나로 만나는 정규근사에 도달하고,
+              마침내 표본으로부터 모집단을 추정하는 통계적 추론에 이릅니다.
             </p>
           </div>
         </div>
