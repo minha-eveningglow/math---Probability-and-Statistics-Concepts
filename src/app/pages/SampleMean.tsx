@@ -68,6 +68,42 @@ export function SampleMean() {
           </div>
           <div className="bg-white border-2 border-teal-300 rounded-xl p-5">
             <h3 className="text-lg font-bold text-teal-800 mb-3">모집단과 표본</h3>
+
+            {/* 모집단 → 추출 → 표본 다이어그램 */}
+            <svg viewBox="0 0 300 130" className="w-full h-auto mb-3">
+              {/* 모집단 영역 */}
+              <rect x="4" y="5" width="140" height="120" rx="8" fill="#d1fae5" stroke="#10b981" strokeWidth="2" />
+              <circle cx="74" cy="65" r="50" fill="#a7f3d0" stroke="#059669" strokeWidth="1.5" />
+              {Array.from({ length: 22 }).map((_, i) => {
+                const angle = (i / 22) * Math.PI * 2 + i * 0.7;
+                const r = 8 + (i % 5) * 8;
+                const cx = 74 + Math.cos(angle) * r;
+                const cy = 65 + Math.sin(angle) * r;
+                return <circle key={i} cx={cx} cy={cy} r="3.5" fill="#059669" />;
+              })}
+              <text x="74" y="18" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#065f46">모집단</text>
+
+              {/* 화살표 */}
+              <line x1="150" y1="65" x2="205" y2="65" stroke="#dc2626" strokeWidth="2.5" markerEnd="url(#arrowhead)" />
+              <text x="177" y="55" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#dc2626">추출</text>
+              <defs>
+                <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                  <path d="M0,0 L8,4 L0,8 Z" fill="#dc2626" />
+                </marker>
+              </defs>
+
+              {/* 표본 영역 */}
+              <circle cx="248" cy="65" r="34" fill="#a7f3d0" stroke="#059669" strokeWidth="1.5" />
+              {Array.from({ length: 7 }).map((_, i) => {
+                const angle = (i / 7) * Math.PI * 2 + 0.4;
+                const r = 6 + (i % 3) * 9;
+                const cx = 248 + Math.cos(angle) * r;
+                const cy = 65 + Math.sin(angle) * r;
+                return <circle key={i} cx={cx} cy={cy} r="3.5" fill="#059669" />;
+              })}
+              <text x="248" y="18" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#065f46">표본</text>
+            </svg>
+
             <ul className="text-sm text-gray-700 space-y-1.5">
               <li><strong className="text-teal-700">모집단</strong> — 조사 대상이 되는 집단 전체</li>
               <li><strong className="text-teal-700">표본</strong> — 조사하기 위해 뽑은 모집단의 일부분</li>
