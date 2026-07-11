@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp, Sigma, Percent, Filter, Repeat, BarChart2, Activity, Bell, GitMerge } from 'lucide-react';
+import { ArrowRight, Shuffle, Grid3x3, Triangle, TrendingUp, Sigma, Percent, Filter, Repeat, BarChart2, Activity, Bell, GitMerge, Target } from 'lucide-react';
 
 export function Home() {
   const topics = [
@@ -90,6 +90,14 @@ export function Home() {
       icon: GitMerge,
       color: 'bg-blue-600',
       items: ['근사 조건: np≥5, nq≥5', '근사 공식 B(n,p)≈N(np,npq)', '표준화 후 확률 계산'],
+    },
+    {
+      title: '모평균과 표본평균, 모평균의 추정',
+      description: '표본평균의 분포부터 신뢰구간까지 — 표본으로 모집단을 추정한다',
+      path: '/sample-mean',
+      icon: Target,
+      color: 'bg-emerald-600',
+      items: ['모집단과 표본, 임의추출', 'X̄ ~ N(m, σ²/n)', '추정과 신뢰구간', '신뢰구간의 길이'],
     },
   ];
 

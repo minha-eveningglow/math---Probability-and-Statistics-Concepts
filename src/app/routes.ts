@@ -12,6 +12,7 @@ import { DiscreteRV } from "./pages/DiscreteRV";
 import { ContinuousRV } from "./pages/ContinuousRV";
 import { NormalDistribution } from "./pages/NormalDistribution";
 import { BinomialNormalApprox } from "./pages/BinomialNormalApprox";
+import { SampleMean } from "./pages/SampleMean";
 import { Root } from "./pages/Root";
 
 export const router = createBrowserRouter([
@@ -31,6 +32,7 @@ export const router = createBrowserRouter([
       { path: "continuous-rv", Component: ContinuousRV },
       { path: "normal-distribution", Component: NormalDistribution },
       { path: "binomial-normal", Component: BinomialNormalApprox },
+      { path: "sample-mean", Component: SampleMean },
       { path: "flow", Component: ConceptualFlow },
     ],
   },
