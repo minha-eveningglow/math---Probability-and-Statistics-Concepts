@@ -4,6 +4,7 @@ import { SampleMeanDistribution } from '../components/SampleMeanDistribution';
 import { ConfidenceIntervalViz } from '../components/ConfidenceIntervalViz';
 import { ElectionConfidenceViz } from '../components/ElectionConfidenceViz';
 import { ConfidenceZDiagram } from '../components/ConfidenceZDiagram';
+import { CentralLimitTheoremViz } from '../components/CentralLimitTheoremViz';
 
 export function SampleMean() {
   return (
@@ -229,12 +230,75 @@ export function SampleMean() {
         </div>
 
         {/* 인터랙티브 */}
-        <div className="bg-white rounded-xl shadow-lg p-6">
+        <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
           <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
             <Calculator className="w-5 h-5 mr-2 text-emerald-600" />
             표본평균의 분포 탐색기 — n을 바꾸면 분포가 어떻게 좁아질까?
           </h3>
           <SampleMeanDistribution />
+        </div>
+
+        {/* 중심극한정리 시뮬레이션 */}
+        <div className="bg-white rounded-xl shadow-lg p-6">
+          <h3 className="text-lg font-bold text-gray-900 mb-2 flex items-center">
+            <Calculator className="w-5 h-5 mr-2 text-fuchsia-600" />
+            중심극한정리 시뮬레이션 — 모집단이 정규분포가 아니어도 정말 성립할까?
+          </h3>
+          <p className="text-sm text-gray-600 mb-4">
+            위 (2)의 주장을 눈으로 직접 확인해보자. 균등분포·지수분포·쌍봉분포처럼
+            정규분포와 전혀 다르게 생긴 모집단에서 표본을 뽑아도, 표본의 크기 n을 키우면
+            표본평균 X̄의 히스토그램이 정규분포 곡선에 가까워지는지 시뮬레이션으로 확인한다.
+          </p>
+          <CentralLimitTheoremViz />
+
+          {/* 심화 읽을거리: MGF를 이용한 CLT 엄밀한 증명 */}
+          <div className="mt-6 bg-fuchsia-50 border border-fuchsia-200 rounded-xl p-5">
+            <h4 className="font-bold text-fuchsia-900 mb-1 flex items-center gap-2">
+              <BookOpen className="w-4 h-4" />
+              더 깊이 알고 싶다면 — 중심극한정리를 수식으로 증명하기
+            </h4>
+            <p className="text-sm text-fuchsia-800 mb-3">
+              위 시뮬레이션은 "눈으로 확인"하는 수준이지만, 고교 과정을 넘어 적률생성함수(MGF)를
+              이용하면 중심극한정리를 엄밀하게 증명할 수 있다. "통계의 본질" 블로그의 3부작 시리즈.
+            </p>
+            <div className="space-y-2">
+              {[
+                {
+                  href: 'https://hsm-edu.tistory.com/24',
+                  title: '#1. 확률분포가 같을 조건',
+                  desc: 'MGF가 같으면 두 확률변수의 분포도 같다는 정리를 증명한다.',
+                },
+                {
+                  href: 'https://hsm-edu.tistory.com/25',
+                  title: '#2. 정규분포의 적률생성함수',
+                  desc: '정규분포의 확률밀도함수로부터 MGF e^(μt+σ²t²/2)를 유도한다.',
+                },
+                {
+                  href: 'https://hsm-edu.tistory.com/26',
+                  title: '#3. 표본평균의 적률생성함수 (완결)',
+                  desc: '표본평균의 MGF가 표준화 후 표준정규분포의 MGF와 일치함을 보인다.',
+                },
+              ].map((post, i) => (
+                <a
+                  key={post.href}
+                  href={post.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 p-3 rounded-lg bg-white border border-fuchsia-100 hover:bg-fuchsia-100/50 hover:border-fuchsia-300 transition-colors group"
+                >
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-fuchsia-600 text-white text-xs font-bold flex items-center justify-center mt-0.5">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-fuchsia-900 text-sm group-hover:underline">
+                      {post.title}
+                    </p>
+                    <p className="text-xs text-gray-600 mt-0.5">{post.desc}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
